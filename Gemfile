@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#user auth
+gem 'devise'
+
+
 # Use ruby 2.1.2
 ruby '2.1.2'
 
