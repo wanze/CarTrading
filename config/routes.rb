@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :colors
+
   get 'welcome/index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
