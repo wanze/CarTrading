@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 1
+  start: 2014-09-23 21:57:27
+  end: 2014-09-23 21:57:27
+  price: 1.5
+  minimum_step: 1
+  contact_details: MyText
+
+two:
+  car_id: 1
+  start: 2014-09-23 21:57:27
+  end: 2014-09-23 21:57:27
+  price: 1.5
+  minimum_step: 1
+  contact_details: MyText
