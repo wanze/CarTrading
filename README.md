@@ -6,14 +6,13 @@ Note: To be improved.
 
 ##Code Convention / ruby style guide
 
-This seems to be a goog start point: 
+This seems to be a good starting point: 
 
 https://github.com/bbatsov/ruby-style-guide
 
 ##Workflow for implementing a feature / solving a task
 
 1. Pull from the remote master
-
 `
 git pull origin master
 `
@@ -34,8 +33,7 @@ you can always check on which branch you are.
 
 3. Implement the feature.
 
-4. Merge all your local commits into a single commit (nice to have)
-
+4. Merge all your local commis into a single commit (nice to have)
 You can commit as many commits as you like. 
 But before you push something on the remote master branch
 use the command git rebase to merge all your local commit 
