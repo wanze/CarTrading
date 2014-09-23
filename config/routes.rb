@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :types
+
   resources :colors
 
   get 'welcome/index'
