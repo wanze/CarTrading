@@ -10,6 +10,47 @@ This seems to be a good starting point:
 
 https://github.com/bbatsov/ruby-style-guide
 
+
+##Getting started
+
+1) Create a new directory
+
+`
+mkdir CarTrading
+`
+
+2) Switch to that directory and initialize a new git repo
+
+`
+git init
+`
+
+3) Add the remote
+
+`
+git remote add origin git@github.com:wanze/CarTrading.git
+`
+
+4) Pull from the master branch
+
+`
+git pull origin master
+`
+
+##Run the application
+Switch to your CarTrading directory and install the required gems.
+
+`
+bundle install
+`
+
+Migrate the database.
+
+`
+rake db:migrate
+`
+
+
 ##Workflow for implementing a feature / solving a task
 1) Before you start implementing a feature
 
