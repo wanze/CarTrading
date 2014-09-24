@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bid.user_id %>
+</p>
+
+<p>
+  <strong>Offer:</strong>
+  <%= @bid.offer_id %>
+</p>
+
+<p>
+  <strong>Placed by:</strong>
+  <%= @bid.placed_by %>
+</p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @bid.timestamp %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @bid.price %>
+</p>
+
+<%= link_to 'Edit', edit_bid_path(@bid) %> |
+<%= link_to 'Back', bids_path %>

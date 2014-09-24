@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  offer_id: 1
+  placed_by: 1
+  timestamp: 2014-09-24 09:57:56
+  price: 1.5
+
+two:
+  user_id: 1
+  offer_id: 1
+  placed_by: 1
+  timestamp: 2014-09-24 09:57:56
+  price: 1.5
