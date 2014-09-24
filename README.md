@@ -50,6 +50,12 @@ Migrate the database.
 rake db:migrate
 `
 
+Run the app.
+
+`
+rails s
+`
+
 
 ##Workflow for implementing a feature / solving a task
 1) Before you start implementing a feature
@@ -68,7 +74,13 @@ git pull origin master
 git checkout -b new_feature
 `
 
-3) Implement the feature
+3) Implement the feature and commit the changes
+
+`
+git commit
+`
+
+
 
 4) Merge master branch into the feature branch
 
