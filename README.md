@@ -11,40 +11,44 @@ This seems to be a good starting point:
 https://github.com/bbatsov/ruby-style-guide
 
 ##Workflow for implementing a feature / solving a task
-
-###Create new branch
-
-`
-git ceckout -b new_feature_branch
-`
-
-###Implement the feature
-
-###Commit all your changes on the new_feature_branch branch
+1) Before you start implementing a feature
 
 `
-git commit
+git checkout master
 `
-Use the  line 'Closes #xxx' and write a short description about what you did and
-replace xxx with the number of the issue / task that you solved.
 
+`
+git pull origin master
+`
 
+2) Create a new branch
 
-###Assuming you have commited all your work to your feature branch. 
-The procedure would look like this:
+`
+git checkout -b new_feature
+`
 
-'
-Switch to the master branch to get newest stuff from the origin repository: git checkout master
+3) Implement the feature
 
-Get the latest updates from master: git pull origin master
+4) Merge master branch into the feature branch
 
-Switch back to your feature branch: git checkout feature_branch_x
+`
+git merge master
+`
 
-Now we want to merge the current master branch into feature branch git merge master
+5) Switch to the master branch
 
-It could be that there are some conflicts. You can resolve those manually in the conflicted files and commit the resolved files again, e.g.: git commit -am "Resolved conflicted files"
+`
+git checkout master
+`
 
-(written by Stefan)
-'
+6) Merge the feature branch into the master branch
 
-###Enjoy you're leisure time.
+`
+git merge new_feature
+`
+
+7) Push it on the remote master branch
+
+`
+push origin master
+`
