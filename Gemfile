@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 #user auth
 gem 'devise'
 
+#CSS framework UIKit
+gem 'uikitrails', '~> 0.1'
 
 # Use ruby 2.1.2
 ruby '2.1.2'
