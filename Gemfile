@@ -9,6 +9,9 @@ gem 'uikitrails', '~> 0.1'
 # Use ruby 2.1.2
 ruby '2.1.2'
 
+# Use activeadmin as admin CRUD interface
+gem 'activeadmin', github: 'activeadmin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
