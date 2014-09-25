@@ -56,6 +56,27 @@ Run the app.
 rails s
 `
 
+##Troubleshooting
+###rake db migration fails
+Reset the db.
+
+`
+rake db:reset
+`
+
+Run rake migration.
+
+`
+rake db:migrate
+`
+
+###dependencies are missing
+Run bundle install.
+
+`
+bundle install
+`
+
 
 ##Workflow for implementing a feature / solving a task
 1) Before you start implementing a feature
