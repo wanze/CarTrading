@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'devise'
 
 #CSS framework UIKit
-gem 'uikitrails', '~> 0.1'
+gem 'uikit-sass-rails', '~> 1.2.0'
 
 # Use ruby 2.1.2
 ruby '2.1.2'
