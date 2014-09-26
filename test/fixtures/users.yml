@@ -12,6 +12,8 @@ one:
   plz:  3000
   street: Street
   city: Bern
+  # password is: 12345678
+  encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
 
 two:
   id: 2
@@ -21,3 +23,5 @@ two:
   plz:  3000
   street: Street
   city: Bern
+  # password is: 12345678
+  encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO

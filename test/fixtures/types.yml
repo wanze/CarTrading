@@ -2,8 +2,22 @@
 
 one:
   id: 1
-  title: MyString
+  title: Supercar
 
 two:
   id: 2
-  title: MyString
+  title: Economy
+
+three:
+  id: 3
+  title: Luxury
+
+
+four:
+  id: 4
+  title: Premium
+
+five:
+  id: 5
+  title: Coupé
+
