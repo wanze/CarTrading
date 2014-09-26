@@ -7,8 +7,8 @@
 one:
   id: 1
   email: user1@test.com
-  first_name: User
-  last_name: User
+  first_name: User 1
+  last_name: User 1
   plz:  3000
   street: Street
   city: Bern
@@ -18,10 +18,33 @@ one:
 two:
   id: 2
   email: user2@test.com
-  first_name: User
-  last_name: User
+  first_name: User 2
+  last_name: User 2
   plz:  3000
   street: Street
   city: Bern
+  # password is: 12345678
+  encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
+
+three:
+  id: 3
+  email: user3@test.com
+  first_name: User 3
+  last_name: User 3
+  plz:  8000
+  street: Street
+  city: Zuerich
+  # password is: 12345678
+  encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
+
+
+four:
+  id: 4
+  email: user4@test.com
+  first_name: User 4
+  last_name: User 4
+  plz:  1700
+  street: Street
+  city: Fribourg
   # password is: 12345678
   encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
