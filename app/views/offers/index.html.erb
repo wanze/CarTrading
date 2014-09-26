@@ -29,7 +29,7 @@
             <select name="type" id="type" class="uk-width-1-1">
               <option value="">--All--</option>
               <% @types.each do |t| %>
-                  <option value="<%= t.id %>"><%= t.title %></option>
+                  <option value="<%= t.id %>"<%= if t.id == params[:type]; ' selected' end %>><%= t.title %></option>
               <% end %>
             </select>
           </div>
