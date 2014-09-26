@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require uikithai
+ *= require_self
  */
+
+body {margin: 40px}

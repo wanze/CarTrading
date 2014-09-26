@@ -61,3 +61,7 @@ gem 'spring',        group: :development
 # gems for heroku deployment
 gem 'rails_12factor'
 gem 'therubyracer'
+
+# Image upload
+gem "mini_magick"
+gem "carrierwave"
