@@ -50,6 +50,12 @@ Migrate the database.
 rake db:migrate
 `
 
+If you want you can load some sample data from the folder test/fixtures.
+
+`
+rake db:fixtures:load
+`
+
 Run the app.
 
 `
@@ -69,6 +75,29 @@ Run rake migration.
 `
 rake db:migrate
 `
+
+
+###if the db is really screwed
+Drop all the data.
+
+`
+rake db:drop:all
+`
+
+Create the db.
+
+`
+rake db:create:all
+`
+
+
+Run rake migration.
+
+`
+rake db:migrate
+`
+
+
 
 ###dependencies are missing
 Run bundle install.

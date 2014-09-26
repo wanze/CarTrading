@@ -3,15 +3,33 @@
 one:
   car_id: 1
   start: 2014-09-23 21:57:27
-  end: 2014-09-23 21:57:27
-  price: 1.5
+  end: 2014-09-30 21:57:27
+  price: 1000
   minimum_step: 1
   contact_details: MyText
 
 two:
-  car_id: 1
+  car_id: 2
   start: 2014-09-23 21:57:27
-  end: 2014-09-23 21:57:27
-  price: 1.5
+  end: 2014-09-30 21:57:27
+  price: 1500
+  minimum_step: 1
+  contact_details: MyText
+
+
+three:
+  car_id: 3
+  start: 2014-09-23 21:57:27
+  end: 2014-09-30 21:57:27
+  price: 2000
+  minimum_step: 1
+  contact_details: MyText
+
+
+four:
+  car_id: 4
+  start: 2014-09-23 21:57:27
+  end: 2014-09-30 21:57:27
+  price: 1200
   minimum_step: 1
   contact_details: MyText

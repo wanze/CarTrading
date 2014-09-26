@@ -7,3 +7,26 @@ one:
 two:
   id: 2
   title: Red
+
+three:
+  id: 3
+  title: Silver
+
+
+four:
+  id: 4
+  title: White
+
+
+five:
+  id: 5
+  title: Black
+
+six:
+  id: 6
+  title: Yellow
+
+
+seven:
+  id: 7
+  title: Grey
