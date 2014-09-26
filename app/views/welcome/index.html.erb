@@ -1,2 +1,7 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div>
+  <h1>Car Trading</h1>
+  	<%= link_to "My cars", controller: 'cars', class: 'uk-link' %>
+  	<%= link_to "My offers", controller: 'offers', class: 'uk-link' %>
+  	<%= link_to "My bids", controller: 'offers', class: 'uk-link' %>
+   	<%= link_to "New offer", new_offer_path, class: 'uk-link' %>
+</div>
