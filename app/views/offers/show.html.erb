@@ -1,34 +1,93 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @offer.car.brand.title %></h1>
 
 <p>
-  <strong>Car:</strong>
-  <%= @offer.car_id %>
+  <%= @offer.car.description %>
 </p>
 
 <p>
-  <strong>Start:</strong>
-  <%= @offer.start %>
+  Available until <%= @offer.end %>
 </p>
 
-<p>
-  <strong>End:</strong>
-  <%= @offer.end %>
-</p>
+<ul class="uk-tab" data-uk-tab="{connect: '#tabs-content'}">
+  <li class="uk-active"><a href="#">Overview</a></li>
+  <li><a href="#">Bids</a></li>
+  <li><a href="#">Bid Settings</a></li>
+</ul>
 
-<p>
-  <strong>Price:</strong>
-  <%= @offer.price %>
-</p>
+<ul id="tabs-content" class="uk-switcher uk-margin">
 
-<p>
-  <strong>Minimum step:</strong>
-  <%= @offer.minimum_step %>
-</p>
+  <!-- General -->
+  <li>
+    <dl class="uk-description-list-horizontal">
+      <dt>Type</dt>
+      <dd><%= @offer.car.type.title %></dd>
+      <dt>Color</dt>
+      <dd><%= @offer.car.color.title %></dd>
+      <dt>Age</dt>
+      <dd><%= @offer.car.age %></dd>
+      <dt>Mileage</dt>
+      <dd><%= @offer.car.mileage %></dd>
+    </dl>
+  </li>
 
-<p>
-  <strong>Contact details:</strong>
-  <%= @offer.contact_details %>
-</p>
+  <!-- Bids -->
+  <li>
+    <h2>Place your bid</h2>
+    <form class="uk-form uk-form-stacked" action="<%= bids_url %>" method="POST">
+        <div class="uk-form-row">
+          <label class="uk-form-label" for="price">Amount</label>
+          <div class="uk-form-controls">
+            <input id="price" type="text" name="price">
+            <button class="uk-button uk-button-primary" type="submit">Place bid</button>
+          </div>
+        </div>
+      <% #This adds the needed field for the CRSF protection to the form %>
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    </form>
 
-<%= link_to 'Edit', edit_offer_path(@offer) %> |
-<%= link_to 'Back', offers_path %>
+    <h2>History</h2>
+    <table class="uk-table uk-table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @offer.bids.each do |bid| %>
+        <tr>
+          <td><%= bid.user.email %></td>
+          <td><%= bid.timestamp %></td>
+          <td><%= bid.price %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </li>
+
+  <!-- Bid settings -->
+  <li>
+
+    <form class="uk-form uk-form-stacked" action="" method="POST">
+      <div class="uk-form-row">
+        <label class="uk-form-label" for="auto_bidding">Enable automatic bidding</label>
+        <div class="uk-form-controls">
+          <input id="auto_bidding" type="checkbox" name="auto_bidding" value="1">
+        </div>
+      </div>
+      <div class="uk-form-row">
+        <label class="uk-form-label" for="price">Amount</label>
+        <div class="uk-form-controls">
+          <input id="max_amount" type="text" name="max_amount">
+        </div>
+      </div>
+      <div class="uk-form-row">
+        <button class="uk-button uk-button-primary" type="submit">Save settings</button>
+      </div>
+      <% #This adds the needed field for the CRSF protection to the form %>
+      <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+    </form>
+
+  </li>
+</ul>

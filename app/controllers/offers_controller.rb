@@ -4,7 +4,14 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-    @offers = Offer.all
+
+    # Check if offers must be filtered
+    if params.count > 0
+      @offers = Offer.filter(params)
+    else
+      # No filter active, but display only active offers!
+      @offers = Offer.where(:end <= Time.now)
+    end
     @brands = Brand.all
     @colors = Color.all
     @types = Type.all
@@ -72,6 +79,7 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
+      # params.require(:offer).permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
+      params.permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
     end
 end

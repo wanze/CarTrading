@@ -4,7 +4,7 @@
   <div class="uk-width-medium-1-1">
     <div class="uk-panel uk-panel-box">
       <h3 class="uk-panel-title">Filter</h3>
-      <form class="uk-form uk-form-stacked">
+      <form class="uk-form uk-form-stacked" action="<%= offers_path %>" method="GET">
         <div class="uk-grid">
           <div class="uk-width-1-3">
             <label class="uk-form-label" for="brand">Brand</label>
@@ -34,21 +34,23 @@
             </select>
           </div>
         </div>
-        <div class="uk-grid">
-          <div class="uk-width-1-3">
-            <label class="uk-form-label" for="price">Max. Price</label>
-            <input id="price" type="text" name="price" class="uk-width-1-1">
-          </div>
-          <div class="uk-width-2-3">
-            <label class="uk-form-label" for="title">Title</label>
-            <input id="title" type="text" name="title" class="uk-width-1-1">
-          </div>
-        </div>
+        <!--<div class="uk-grid">-->
+          <!--<div class="uk-width-1-3">-->
+            <!--<label class="uk-form-label" for="price">Max. Price</label>-->
+            <!--<input id="price" type="text" name="price" class="uk-width-1-1">-->
+          <!--</div>-->
+          <!--<div class="uk-width-2-3">-->
+            <!--<label class="uk-form-label" for="title">Title</label>-->
+            <!--<input id="title" type="text" name="title" class="uk-width-1-1">-->
+          <!--</div>-->
+        <!--</div>-->
         <div class="uk-grid">
           <div class="uk-width-1-1">
-            <button class="uk-button uk-button-primary" type="button">Search</button>
+            <button class="uk-button uk-button-primary" type="submit">Search</button>
           </div>
         </div>
+        <% #This adds the needed field for the CRSF protection to the form %>
+        <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
       </form>
     </div>
   </div>
@@ -56,12 +58,9 @@
 
 <!-- Table listing the available offers -->
 
-
-
-<table>
+<table class="uk-table uk-table-striped uk-table-hover">
   <thead>
     <tr>
-      <th>Title</th>
       <th>Brand</th>
       <th>Type</th>
       <th>Color</th>
@@ -70,14 +69,13 @@
       <th>Min. Price</th>
       <th>Minimum step</th>
       <th>Current bid</th>
-      <th colspan="3"></th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.title %></td>
         <td><%= offer.car.brand.title %></td>
         <td><%= offer.car.type.title %></td>
         <td><%= offer.car.color.title %></td>
@@ -85,10 +83,11 @@
         <td><%= offer.end %></td>
         <td><%= offer.price %></td>
         <td><%= offer.minimum_step %></td>
-        <td> TODO </td>
-        <td><%= link_to 'Show', offer %></td>
-        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= offer.get_highest_price %></td>
+        <td><%= link_to 'View', offer, class: "uk-button uk-button-small" %></td>
+        <!--<td><%= link_to 'Show', offer %></td>-->
+        <!--<td><%= link_to 'Edit', edit_offer_path(offer) %></td>-->
+        <!--<td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
