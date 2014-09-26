@@ -14,3 +14,5 @@
  *= require_self
  *= require uikit/gradient
  */
+
+body {margin: 40px}

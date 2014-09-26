@@ -1,7 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  id: 1
+  title: Car 1
   description: MyText
   image: MyString
   user_id: 1
@@ -12,7 +13,8 @@ one:
   color_id: 1
 
 two:
-  title: MyString
+  id: 2
+  title: Car 2
   description: MyText
   image: MyString
   user_id: 1
@@ -20,4 +22,52 @@ two:
   age: 1
   mileage: 1
   brand_id: 1
-  color_id: 1
+  color_id: 2
+
+three:
+  id: 3
+  title: Car 3
+  description: MyText
+  image: MyString
+  user_id: 2
+  type_id: 2
+  age: 1
+  mileage: 1
+  brand_id: 2
+  color_id: 3
+
+four:
+    id: 4
+    title: Car 4
+    description: MyText
+    image: MyString
+    user_id: 2
+    type_id: 3
+    age: 1
+    mileage: 1
+    brand_id: 4
+    color_id: 4
+
+five:
+  id: 5
+  title: Car 5
+  description: MyText
+  image: MyString
+  user_id: 2
+  type_id: 4
+  age: 1
+  mileage: 1
+  brand_id: 3
+  color_id: 5
+
+six:
+  id: 6
+  title: Car 6
+  description: MyText
+  image: MyString
+  user_id: 1
+  type_id: 4
+  age: 1
+  mileage: 1
+  brand_id: 2
+  color_id: 4

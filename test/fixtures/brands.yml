@@ -1,7 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  id: 1
+  title: BMW
 
 two:
-  title: MyString
+  id: 2
+  title: Opel
+
+three:
+  id: 3
+  title: Audi
+
+four:
+  id: 4
+  title: Mercedes
+
+five:
+  id: 5
+  title: Porsche
+
+six:
+  id: 6
+  title: Volkswagen

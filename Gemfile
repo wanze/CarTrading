@@ -9,6 +9,9 @@ gem 'uikit-sass-rails', '~> 1.2.0'
 # Use ruby 2.1.2
 ruby '2.1.2'
 
+# Use activeadmin as admin CRUD interface
+gem 'activeadmin', github: 'activeadmin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
@@ -58,3 +61,7 @@ gem 'spring',        group: :development
 # gems for heroku deployment
 gem 'rails_12factor'
 gem 'therubyracer'
+
+# Image upload
+gem "mini_magick"
+gem "carrierwave"

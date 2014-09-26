@@ -12,8 +12,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @car.image %>
+  <%= image_tag @car.image_url(:thumb) if @car.image? %>
 </p>
+
 
 <p>
   <strong>User:</strong>

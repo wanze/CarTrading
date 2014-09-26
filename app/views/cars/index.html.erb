@@ -1,18 +1,15 @@
-<h1>Listing cars</h1>
+<h1>My cars</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>User</th>
       <th>Type</th>
-      <th>Age</th>
-      <th>Mileage</th>
       <th>Brand</th>
       <th>Color</th>
-      <th colspan="3"></th>
+      <th>Age</th>
+      <th>Mileage</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -20,17 +17,14 @@
     <% @cars.each do |car| %>
       <tr>
         <td><%= car.title %></td>
-        <td><%= car.description %></td>
-        <td><%= car.image %></td>
-        <td><%= car.user.email %></td>
         <td><%= car.type.title %></td>
-        <td><%= car.age %></td>
-        <td><%= car.mileage %></td>
         <td><%= car.brand.title %></td>
         <td><%= car.color.title %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= car.age%></td>
+        <td><%= car.mileage%></td>
+        <td><%= link_to 'Show', car %>
+        <%= link_to 'Edit', edit_car_path(car) %>
+      	<%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure you want to delete this car?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Car', new_car_path %>
+<%= link_to 'Register a new car', new_car_path, :class => 'uk-link' %>

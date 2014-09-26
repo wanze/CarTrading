@@ -1,7 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  id: 1
+  title: Supercar
 
 two:
-  title: MyString
+  id: 2
+  title: Economy
+
+three:
+  id: 3
+  title: Luxury
+
+
+four:
+  id: 4
+  title: Premium
+
+five:
+  id: 5
+  title: Coupé
+

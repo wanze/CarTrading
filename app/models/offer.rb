@@ -1,6 +1,7 @@
 class Offer < ActiveRecord::Base
   belongs_to :car
   has_many :bids
+  has_many :bid_settings
 
   # Find offers based on filters
   def self.filter(params)

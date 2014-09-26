@@ -3,5 +3,5 @@ class Car < ActiveRecord::Base
   belongs_to :brand
   belongs_to :type
   belongs_to :color #could also be many to many...
-  has_many :cars
+  mount_uploader :image, ImageUploader
 end
