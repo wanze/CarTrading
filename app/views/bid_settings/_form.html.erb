@@ -1,0 +1,33 @@
+<%= form_for(@bid_setting) do |f| %>
+  <% if @bid_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bid_setting.errors.count, "error") %> prohibited this bid_setting from being saved:</h2>
+
+      <ul>
+      <% @bid_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :offer_id %><br>
+    <%= f.number_field :offer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :automatic %><br>
+    <%= f.check_box :automatic %>
+  </div>
+  <div class="field">
+    <%= f.label :max_amount %><br>
+    <%= f.text_field :max_amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

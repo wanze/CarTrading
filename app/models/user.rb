@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :cars
   has_many :bids
+  has_many :bid_settings
 end
