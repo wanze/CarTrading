@@ -19,7 +19,24 @@
 <% end %>
 </div>
 
-<%= yield %>
+<div class="uk-container uk-container-center">
+  <%
+    # Commented out so it is easier to see stuff also when not logged in
+    #if user_signed_in?
+  %>
+      <nav class="uk-navbar uk-margin">
+        <ul class="uk-navbar-nav">
+          <li<%= if params[:controller] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">Offers</a></li>
+          <li<%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
+          <li<%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
+          <li<%= if params[:controller] == 'users'; " class=uk-active" end %>><a href="<%= edit_user_registration_path %>">Profile</a></li>
+        </ul>
+      </nav>
+  <% #end %>
+  <!-- Main Menu -->
+
+  <%= yield %>
+</div>
 
 </body>
 </html>
