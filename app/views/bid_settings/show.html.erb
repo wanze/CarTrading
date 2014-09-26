@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Offer:</strong>
+  <%= @bid_setting.offer_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bid_setting.user_id %>
+</p>
+
+<p>
+  <strong>Automatic:</strong>
+  <%= @bid_setting.automatic %>
+</p>
+
+<p>
+  <strong>Max amount:</strong>
+  <%= @bid_setting.max_amount %>
+</p>
+
+<%= link_to 'Edit', edit_bid_setting_path(@bid_setting) %> |
+<%= link_to 'Back', bid_settings_path %>
