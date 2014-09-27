@@ -8,29 +8,31 @@
 </head>
 <body>
 
-<div class="uk-text-muted">
-<% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'uk-link' %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'uk-link'  %>
-<% else %>
-    <%= link_to "Sign up", new_user_registration_path, :class => 'uk-link'  %> |
-    <%= link_to "Login", new_user_session_path, :class => 'uk-link'  %>
-<% end %>
-</div>
-
 <div class="uk-container uk-container-center">
   <%
     # Commented out so it is easier to see stuff also when not logged in
     #if user_signed_in?
   %>
       <nav class="uk-navbar uk-margin">
+        <a href="" class="uk-navbar-brand">CarBay.com</a>
         <ul class="uk-navbar-nav">
           <li<%= if params[:controller] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">Offers</a></li>
           <li<%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
           <li<%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
           <li<%= if params[:controller] == 'users'; " class=uk-active" end %>><a href="<%= edit_user_registration_path %>">Profile</a></li>
         </ul>
+
+        <div class="uk-text-muted uk-float-right uk-container ">
+          <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'uk-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'uk-link'  %>
+          <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'uk-link'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'uk-link'  %>
+          <% end %>
+        </div>
+
       </nav>
   <% #end %>
   <!-- Main Menu -->
