@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   resources :bid_settings
 
   devise_for :admin_users, ActiveAdmin::Devise.config

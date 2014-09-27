@@ -14,13 +14,13 @@
     #if user_signed_in?
   %>
       <nav class="uk-navbar uk-margin">
-        <a href="" class="uk-navbar-brand">CarBay.com</a>
+        <a href="<%= welcome_index_path %>" class="uk-navbar-brand">CarBay.com</a>
         <ul class="uk-navbar-nav">
-          <li<%= if params[:controller] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">Offers</a></li>
-          <li<%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
-          <li<%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
-          <li<%= if params[:controller] == 'users'; " class=uk-active" end %>><a href="<%= edit_user_registration_path %>">Profile</a></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete  if user_signed_in? %></li>
+          <li <%= if params[:controller] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">Offers</a></li>
+          <li <%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
+          <li <%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
+          <li> <%= link_to 'My Account', users_index_path %> </li>
+          <li> <%= link_to "Logout", destroy_user_session_path, method: :delete  if user_signed_in? %> </li>
         </ul>
 
         <div class="uk-text-muted uk-float-right uk-container ">

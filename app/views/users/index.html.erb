@@ -1,0 +1,34 @@
+<h1>Account</h1>
+<p>Welcome <%=current_user.first_name << ' ' << current_user.last_name %>!</p>
+<div class="uk-grid">
+
+    <div class="uk-width-medium-1-2 ">
+      <div class="uk-panel uk-panel-box "><%= link_to('Edit Account', edit_user_registration_path) %></div>
+    </div>
+
+    <div class="uk-width-medium-1-2 ">
+      <div class="uk-panel uk-panel-box "><%= link_to('Register a Car', new_car_path) %></div>
+    </div>
+
+  <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box"><%= link_to('My Cars', cars_path) %></div>
+  </div>
+
+  <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box"><%= link_to('Create Offer', new_offer_path) %></div>
+  </div>
+
+  <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box"><%= link_to('My open Offers', offers_path) %></div>
+  </div>
+
+  <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box"><%= link_to('My passed Offers', offers_path) %></div>
+  </div>
+  <div class="uk-width-medium-1-2">
+    <div class="uk-panel uk-panel-box"><%= link_to('My Bids', bids_path) %></div>
+  </div>
+
+
+
+</div>
