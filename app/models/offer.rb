@@ -34,4 +34,14 @@ class Offer < ActiveRecord::Base
     end
   end
 
+  # Return the min amount a user has to bid
+  def get_min_bid_amount
+    (self.get_highest_price + self.minimum_step).to_f
+  end
+
+  # Check if offer is still active
+  def is_active
+    Time.now <= self.end
+  end
+
 end

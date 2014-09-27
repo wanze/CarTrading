@@ -28,17 +28,40 @@ class BidsController < ApplicationController
   # POST /bids
   # POST /bids.json
   def create
-    @bid = Bid.new(bid_params)
-
-    respond_to do |format|
+    @offer = Offer.find(params[:offer_id])
+    if @offer.nil?
+      redirect_to 'offers/index', alert: 'Offer not found'
+    end
+    if !@offer.is_active
+      redirect_to 'offers/index', alert: 'Offer no longer available'
+    end
+    amount = params[:amount].to_f # Cast to float
+    if amount < @offer.get_min_bid_amount
+      redirect_to @offer, notice: 'The entered amount is too small'
+    else
+      @bid = Bid.new
+      @bid.user_id = current_user.id
+      @bid.offer_id = @offer.id
+      @bid.price = amount
+      @bid.placed_by = Bid::PLACED_BY_USER
+      @bid.timestamp = Time.now
       if @bid.save
-        format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
-        format.json { render :show, status: :created, location: @bid }
+        redirect_to @offer, notice: "You're bid was successfully placed"
       else
-        format.html { render :new }
-        format.json { render json: @bid.errors, status: :unprocessable_entity }
+        redirect_to @offer, alert: 'Could not create bid'
       end
     end
+
+
+    # respond_to do |format|
+    #   if @bid.save
+    #     format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
+    #     format.json { render :show, status: :created, location: @bid }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @bid.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bids/1
