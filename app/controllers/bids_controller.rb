@@ -1,10 +1,14 @@
 class BidsController < ApplicationController
   before_action :set_bid, only: [:show, :edit, :update, :destroy]
 
+  # secure controller actions, they are only accessible by an authenticated user
+  before_action :authenticate_user!
+
   # GET /bids
   # GET /bids.json
   def index
-    @bids = Bid.all
+    @user = User.find(current_user.id)
+    @bids = @user.bids
   end
 
   # GET /bids/1
