@@ -20,13 +20,12 @@
           <li<%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
           <li<%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
           <li<%= if params[:controller] == 'users'; " class=uk-active" end %>><a href="<%= edit_user_registration_path %>">Profile</a></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete  if user_signed_in? %></li>
         </ul>
 
         <div class="uk-text-muted uk-float-right uk-container ">
           <% if user_signed_in? %>
               Logged in as <strong><%= current_user.email %></strong>.
-              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'uk-link' %> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'uk-link'  %>
           <% else %>
               <%= link_to "Sign up", new_user_registration_path, :class => 'uk-link'  %> |
               <%= link_to "Login", new_user_session_path, :class => 'uk-link'  %>
