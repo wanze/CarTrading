@@ -21,7 +21,7 @@
         <td><%= bid.offer_id %></td>
         <td><%= bid.offer.car.title %></td>
         <td><%= if bid.placed_by == 1 then 'User' else 'System'  end %></td>
-        <td><%= bid.timestamp %></td>
+        <td><%= bid.timestamp.strftime(CarTrading::DATETIME_FORMAT) %></td>
         <td><%= bid.price %></td>
         <td><%= link_to 'Show', bid.offer, class: "uk-button uk-button-small" %></td>
       </tr>

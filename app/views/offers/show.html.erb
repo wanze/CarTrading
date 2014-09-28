@@ -59,7 +59,7 @@
         <% @offer.bids.order('timestamp DESC').each do |bid| %>
         <tr>
           <td><%= bid.user.email %></td>
-          <td><%= bid.timestamp %></td>
+          <td><%= bid.timestamp.strftime(CarTrading::DATETIME_FORMAT) %></td>
           <td><%= bid.price %></td>
         </tr>
         <% end %>

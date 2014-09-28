@@ -27,8 +27,8 @@
         <td><%= offer.car.brand.title %></td>
         <td><%= offer.car.type.title %></td>
         <td><%= offer.car.color.title %></td>
-        <td><%= offer.start %></td>
-        <td><%= offer.end %></td>
+        <td><%= offer.start.strftime(CarTrading::DATETIME_FORMAT) %></td>
+        <td><%= offer.end.strftime(CarTrading::DATETIME_FORMAT) %></td>
         <td><%= offer.price %></td>
         <td><%= offer.minimum_step %></td>
         <td><%= offer.get_highest_price %></td>

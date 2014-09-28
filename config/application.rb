@@ -20,4 +20,7 @@ module CarTrading
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
   end
+
+  DATETIME_FORMAT = '%Y-%m-%d, %H:%M:%S'
+
 end
