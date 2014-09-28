@@ -1,5 +1,7 @@
-<h1>My Account</h1>
-<p>Welcome <%=current_user.first_name << ' ' << current_user.last_name %>!</p>
+<h1> <%= image_tag avatar_url(current_user) %> My Account</h1>
+
+
+      <p>Welcome <%=current_user.first_name << ' ' << current_user.last_name %>!</p>
 
 <div class="uk-panel uk-panel-box">
     <div class="uk-grid uk-grid-preserve uk-text-center" data-uk-grid-match="{target:'.uk-panel'}">
@@ -28,43 +30,48 @@
     </div>
 
 
-    <div class="uk-grid uk-grid-preserve uk-text-center" data-uk-grid-match="{target:'.uk-panel'}">
-      <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div></div>
+  <div class="uk-grid uk-grid-preserve uk-text-center" data-uk-grid-match="{target:'.uk-panel'}">
 
-      <div class="uk-width-large-1-5 uk-width-medium-1-3">
-        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
-          <%= link_to('Create Offer', new_offer_path) %>
-        </div>
+    <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div></div>
+
+    <div class="uk-width-large-1-5 uk-width-medium-1-3">
+      <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+        <%= link_to('Create Offer', new_offer_path) %>
       </div>
-
-      <div class="uk-width-large-1-5 uk-width-medium-1-3">
-        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
-          <%= link_to('My Offers', '/users/offers') %>
-        </div>
-      </div>
-
-
-      <div class="uk-width-large-1-5 uk-width-medium-1-3">
-        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
-          <%= link_to('My Passed Offers', '/users/passed_offers') %>
-        </div>
-      </div>
-
-      <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div></div>
     </div>
 
-    <div class="uk-grid uk-grid-preserve uk-text-center" data-uk-grid-match="{target:'.uk-panel'}">
-      <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div></div>
-
-      <div class="uk-width-large-1-5 uk-width-medium-1-3">
-        <div class="uk-panel uk-panel-box uk-panel-box-secondary">
-
-          <%= link_to('My Bids', bids_path) %>
-        </div>
+    <div class="uk-width-large-1-5 uk-width-medium-1-3">
+      <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+        <%= link_to('My Offers', '/users/offers') %>
       </div>
-
-      <div class="uk-width-large-1-5 uk-width-medium-1-3">
-
-      <div class="uk-width-large-1-5 uk-hidden-medium"></div>
     </div>
+
+
+    <div class="uk-width-large-1-5 uk-width-medium-1-3">
+      <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+        <%= link_to('My Passed Offers', '/users/passed_offers') %>
+      </div>
+    </div>
+
+    <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div>
+    </div>
+    </div>
+
+
+  <div class="uk-grid uk-grid-preserve uk-text-center" data-uk-grid-match="{target:'.uk-panel'}">
+
+    <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div></div>
+
+    <div class="uk-width-large-1-5 uk-width-medium-1-3">
+      <div class="uk-panel uk-panel-box uk-panel-box-secondary">
+        <%= link_to('My Bids', bids_path) %>
+      </div>
+    </div>
+
+
+
+    <div class="uk-width-large-1-5 uk-hidden-medium"><div class="uk-panel"></div>
+    </div>
+
+</div>
 </div>
