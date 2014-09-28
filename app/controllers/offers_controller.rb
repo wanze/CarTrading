@@ -21,6 +21,10 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
+    @bid_setting = BidSetting.where(:user_id => current_user.id, :offer_id => @offer.id).first
+    if @bid_setting.nil?
+      @bid_setting = BidSetting.new
+    end
   end
 
   # GET /offers/new

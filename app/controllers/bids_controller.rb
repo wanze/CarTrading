@@ -29,14 +29,14 @@ class BidsController < ApplicationController
   def create
     @offer = Offer.find(params[:offer_id])
     if @offer.nil?
-      redirect_to 'offers/index', alert: 'Offer not found'
+      redirect_to 'offers/index', alert: 'Offer not found' and return
     end
     if !@offer.is_active
-      redirect_to 'offers/index', alert: 'Offer no longer available'
+      redirect_to 'offers/index', alert: 'Offer no longer available' and return
     end
     amount = params[:amount].to_f # Cast to float
     if amount < @offer.get_min_bid_amount
-      redirect_to @offer, notice: 'The entered amount is too small'
+      redirect_to @offer, notice: 'The entered amount is too small' and return
     else
       @bid = Bid.new
       @bid.user_id = current_user.id

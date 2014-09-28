@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/offers'
   get 'users/passed_offers'
 
-  resources :bid_settings
+  post '/bid_settings', to: 'bid_settings#save'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
