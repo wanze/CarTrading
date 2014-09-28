@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'users/offers'
+  get 'users/passed_offers'
 
   resources :bid_settings
 
