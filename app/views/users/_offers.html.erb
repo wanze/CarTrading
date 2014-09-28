@@ -1,0 +1,41 @@
+<!-- Table listing the available offers -->
+
+<table class="uk-table uk-table-striped uk-table-hover">
+  <thead>
+  <tr>
+    <th>Offer id</th>
+    <th>Title</th>
+    <th>Brand</th>
+    <th>Type</th>
+    <th>Color</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Min. Price</th>
+    <th>Minimum step</th>
+    <th>Current bid</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @offers.each do |offer| %>
+      <tr>
+        <td><%= offer.id %></td>
+        <td><%= offer.title %></td>
+        <td><%= offer.car.brand.title %></td>
+        <td><%= offer.car.type.title %></td>
+        <td><%= offer.car.color.title %></td>
+        <td><%= offer.start %></td>
+        <td><%= offer.end %></td>
+        <td><%= offer.price %></td>
+        <td><%= offer.minimum_step %></td>
+        <td><%= offer.get_highest_price %></td>
+        <td><%= link_to 'View', offer, class: "uk-button uk-button-small" %></td>
+        <!--<td><%= link_to 'Show', offer %></td>-->
+        <td><%= link_to 'Edit', edit_offer_path(offer), class: "uk-button uk-button-small" %></td>
+        <!--<td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+  <% end %>
+  </tbody>
+</table>

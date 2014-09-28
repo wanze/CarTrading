@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :update, :destroy, :edit]
 
   # GET /offers
   # GET /offers.json
@@ -25,10 +26,12 @@ class OffersController < ApplicationController
   # GET /offers/new
   def new
     @offer = Offer.new
+    @cars = Car.where(:user_id => current_user.id)
   end
 
   # GET /offers/1/edit
   def edit
+    @cars = Car.where(:user_id => current_user.id)
   end
 
   # POST /offers
@@ -79,7 +82,7 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      # params.require(:offer).permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
-      params.permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
+      params.require(:offer).permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
+      # params.permit(:car_id, :start, :end, :price, :minimum_step, :contact_details)
     end
 end
