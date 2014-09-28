@@ -7,6 +7,7 @@ one:
   price: 1000
   minimum_step: 1
   contact_details: MyText
+  immutable: true
 
 two:
   car_id: 2
@@ -15,6 +16,7 @@ two:
   price: 1500
   minimum_step: 1
   contact_details: MyText
+  immutable: false
 
 
 three:
@@ -24,7 +26,7 @@ three:
   price: 2000
   minimum_step: 1
   contact_details: MyText
-
+  immutable: false
 
 four:
   car_id: 4
@@ -33,3 +35,4 @@ four:
   price: 1200
   minimum_step: 1
   contact_details: MyText
+  immutable: false

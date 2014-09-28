@@ -45,7 +45,11 @@ class BidsController < ApplicationController
       @bid.price = amount
       @bid.placed_by = Bid::PLACED_BY_USER
       @bid.timestamp = Time.now
+
       if @bid.save
+        # make offer immutable
+        Offer.update(@offer.id,immutable: true) if not @offer.immutable
+
         redirect_to @offer, notice: "You're bid was successfully placed"
       else
         redirect_to @offer, alert: 'Could not create bid'

@@ -7,6 +7,7 @@ class CreateOffers < ActiveRecord::Migration
       t.float :price
       t.integer :minimum_step
       t.text :contact_details
+      t.boolean :immutable
 
       t.timestamps
     end
