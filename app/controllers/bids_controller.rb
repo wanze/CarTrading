@@ -7,8 +7,8 @@ class BidsController < ApplicationController
   # GET /bids
   # GET /bids.json
   def index
-    @user = User.find(current_user.id)
-    @bids = @user.bids
+    @bids = Bid.where(:user_id => current_user.id)
+      .group("offer_id")
   end
 
   # GET /bids/1
