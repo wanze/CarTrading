@@ -35,7 +35,7 @@
         <td><%= link_to 'View', offer, class: "uk-button uk-button-small" %></td>
         <!--<td><%= link_to 'Show', offer %></td>-->
         <td><%= link_to 'Edit', edit_offer_path(offer), class: "uk-button uk-button-small "  if offer.end > Time.new %></td>
-        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' }, class: "uk-button uk-button-small uk-button-danger" if not offer.immutable and offer.end > Time.now %></td>
+        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' }, class: "uk-button uk-button-small uk-button-danger" if not offer.is_immutable and offer.is_active %></td>
       </tr>
   <% end %>
   </tbody>

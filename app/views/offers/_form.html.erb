@@ -24,7 +24,7 @@
     <%= f.datetime_select :end %>
   </div>
 
-  <% if not @offer.immutable %>
+  <% if not @offer.is_immutable %>
       <div class="field">
         <%= f.label :price %><br>
         <%= f.text_field :price %>

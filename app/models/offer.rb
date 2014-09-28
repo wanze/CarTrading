@@ -36,12 +36,18 @@ class Offer < ActiveRecord::Base
 
   # Return the min amount a user has to bid
   def get_min_bid_amount
-    (self.get_highest_price + self.minimum_step).to_f
+    min_step = self.minimum_step.present? ? self.minimum_step : 0
+    (self.get_highest_price + min_step).to_f
   end
 
   # Check if offer is still active
   def is_active
     Time.now <= self.end
+  end
+
+  # Returns true if the offer has bids an therefore is immutable
+  def is_immutable
+    self.bids.first.present?
   end
 
 end

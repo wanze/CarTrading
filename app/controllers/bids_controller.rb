@@ -46,12 +46,9 @@ class BidsController < ApplicationController
       @bid.timestamp = Time.now
 
       if @bid.save
-        # make offer immutable
-        if !@offer.immutable
-          @offer.immutable = true
-          @offer.save
-        end
-
+        # Running rake db:migrate always removed the attribute immutable from the schema.rb resulting in an error
+        # undefined method `immutable' -> maybe a reserved word? -.-
+        # Added method is_immutable to the offer model returning (dynamically) true if there are any bids placed
         redirect_to @offer, notice: "You're bid was successfully placed"
       else
         redirect_to @offer, alert: 'Could not create bid'

@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 20140926210314) do
     t.float    "price"
     t.integer  "minimum_step"
     t.text     "contact_details"
-    t.boolean  "immutable"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
