@@ -1,10 +1,14 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  
+# secure controller actions, they are only accessible by an authenticated user
+	before_action :authenticate_user!
 
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+  	@user = User.find(current_user.id)
+    @cars = @user.cars
   end
 
   # GET /cars/1
@@ -25,7 +29,7 @@ class CarsController < ApplicationController
   # POST /cars.json
   def create
     @car = Car.new(car_params)
-
+    @car.user_id = current_user.id
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: 'Car was successfully created.' }
