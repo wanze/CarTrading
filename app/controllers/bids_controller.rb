@@ -7,8 +7,7 @@ class BidsController < ApplicationController
   # GET /bids
   # GET /bids.json
   def index
-    @bids = Bid.where(:user_id => current_user.id)
-      .group("offer_id")
+    @bids = Bid.where(:user_id => current_user.id).group("offer_id")
   end
 
   # GET /bids/1
@@ -48,24 +47,16 @@ class BidsController < ApplicationController
 
       if @bid.save
         # make offer immutable
-        Offer.update(@offer.id,immutable: true) if not @offer.immutable
+        if !@offer.immutable
+          @offer.immutable = true
+          @offer.save
+        end
 
         redirect_to @offer, notice: "You're bid was successfully placed"
       else
         redirect_to @offer, alert: 'Could not create bid'
       end
     end
-
-
-    # respond_to do |format|
-    #   if @bid.save
-    #     format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
-    #     format.json { render :show, status: :created, location: @bid }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @bid.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # PATCH/PUT /bids/1
