@@ -48,3 +48,16 @@ four:
   city: Fribourg
   # password is: 12345678
   encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
+
+
+
+five:
+  id: 5
+  email: a.rueedlinger@gmail.com
+  first_name: Alex
+  last_name: Rueedlinger
+  plz:  3000
+  street: Bern Str.
+  city: Bern
+  # password is: 12345678
+  encrypted_password: $2a$10$6x9D0ic1OGDzAPszGo.B3.Y5.Aila/rSLP9GpPeGU76uV.Jl0ZSRO
