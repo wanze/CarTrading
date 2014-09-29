@@ -18,16 +18,25 @@
 
   <!-- General -->
   <li>
-    <dl class="uk-description-list-horizontal">
-      <dt>Type</dt>
-      <dd><%= @offer.car.type.title %></dd>
-      <dt>Color</dt>
-      <dd><%= @offer.car.color.title %></dd>
-      <dt>Age</dt>
-      <dd><%= @offer.car.age %></dd>
-      <dt>Mileage</dt>
-      <dd><%= @offer.car.mileage %></dd>
-    </dl>
+    <div class="uk-grid">
+        <div class="uk-width-1-4">
+          <% if not @offer.car.image.to_s.empty? %>
+            <img class="uk-thumbnail" src="<%= @offer.car.image %>">
+          <% end %>
+        </div>
+        <div class="uk-width-2-4">
+            <dl class="uk-description-list-horizontal">
+              <dt>Type</dt>
+              <dd><%= @offer.car.type.title %></dd>
+              <dt>Color</dt>
+              <dd><%= @offer.car.color.title %></dd>
+              <dt>Age</dt>
+              <dd><%= @offer.car.age %></dd>
+              <dt>Mileage</dt>
+              <dd><%= @offer.car.mileage %></dd>
+            </dl>
+        </div>
+    </div>
   </li>
 
   <!-- Bids -->
