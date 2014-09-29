@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'tweets/new'
+
+  get 'tweets/create'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'home/show'
+
   get 'users/index'
   get 'users/offers'
   get 'users/passed_offers'
