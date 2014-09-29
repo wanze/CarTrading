@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 40ac6655d67eece5f43f72ff6137db1ba34aa711
+  revision: 7e8627fef10912593a7387ea3967e2fdd39df783
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -113,7 +113,7 @@ GEM
     mime-types (2.3)
     mini_magick (3.8.1)
       subexec (~> 0.2.1)
-    minitest (5.4.1)
+    minitest (5.4.2)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     oauth (0.4.7)
