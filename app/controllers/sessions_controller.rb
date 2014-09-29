@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # for the twitter auth
   def new
   end
 

@@ -66,6 +66,6 @@ gem 'therubyracer'
 gem "mini_magick"
 gem "carrierwave"
 
-# Twitter and Twitter_Auth
+# Twitter and Twitter_Auth Gems
 gem 'twitter', '~> 5.3.1'
 gem 'omniauth-twitter', '~> 1.0.1'
