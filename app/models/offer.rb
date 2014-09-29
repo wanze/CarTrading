@@ -1,4 +1,11 @@
 class Offer < ActiveRecord::Base
+	
+	validates :car_id, presence: true
+	validates :price, presence: true
+	validates :start, presence: true
+	validates :end, presence: true
+	validates :minimum_step, presence: true
+	
   belongs_to :car
   has_many :bids
   has_many :bid_settings

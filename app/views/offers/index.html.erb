@@ -70,7 +70,7 @@
       <th>Min. Price</th>
       <th>Minimum step</th>
       <th>Current bid</th>
-      <th>&nbsp;</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -89,7 +89,7 @@
         <td><%= link_to 'View', offer, class: "uk-button uk-button-small" %></td>
         <!--<td><%= link_to 'Show', offer %></td>-->
         <!--<td><%= link_to 'Edit', edit_offer_path(offer) %></td>-->
-        <!--<td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Delete', offer, class: "uk-button uk-button-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -22,9 +22,9 @@
         <td><%= car.color.title %></td>
         <td><%= car.age%></td>
         <td><%= car.mileage%></td>
-        <td><%= link_to 'Show', car %>
-        <%= link_to 'Edit', edit_car_path(car) %>
-      	<%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure you want to delete this car?' } %></td>
+        <td><%= link_to 'View', car, class: "uk-button uk-button-small" %>
+        <%= link_to 'Edit', edit_car_path(car), class: "uk-button uk-button-small" %>
+      	<%= link_to 'Delete', car, class: "uk-button uk-button-small", method: :delete, data: { confirm: 'Are you sure you want to delete this car?' } %></td>
       </tr>
     <% end %>
   </tbody>

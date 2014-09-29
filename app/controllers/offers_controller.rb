@@ -71,10 +71,13 @@ class OffersController < ApplicationController
   # DELETE /offers/1
   # DELETE /offers/1.json
   def destroy
-    @offer.destroy
-    respond_to do |format|
-      format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
-      format.json { head :no_content }
+  	@bids = Bid.where(:offer_id => @offer.id)
+  	if @bids.empty?
+  		@offer.destroy
+  		respond_to do |format|
+     		format.html { redirect_to offers_url, notice: 'Offer was successfully destroyed.' }
+     		format.json { head :no_content }
+   	 end
     end
   end
 
