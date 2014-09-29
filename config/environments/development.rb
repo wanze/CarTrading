@@ -38,6 +38,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Twitter Keys
-  config.twitter_key = "QvduVukBT9fWt8h1eP11drhER"
-  config.twitter_secret = "eRUycNmTuO3ajjyaHQFOYgyDIo0KG7lRHd6rJpKsZIsrZhMyOd"
+  config.twitter_key = "yotaG6xaglNOnQkRSD0sjDlXn"
+  config.twitter_secret = "5Ub4TxYZRyF1rVVN6k26CLJVDiMXd6kOEJLP9sRjMphptNq8Vv"
 end

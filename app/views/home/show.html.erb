@@ -1,2 +1,22 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
+
+<body>
+    <div>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Twitter", "/auth/twitter", id: "sign_in" %>
+      <% end %>
+    </div>
+    <div>
+    <%= yield %>
+    </div>
+  </body>
+
+
+<% if !current_user.nil? %>
+    <p>Click The link below to send a tweet.</p>
+    <%= link_to "Send a Tweet", new_tweet_path %>
+<% else %>
+    <p>You must log in to send a tweet.</p>
+<% end %>
