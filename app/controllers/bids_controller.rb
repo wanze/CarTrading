@@ -49,7 +49,13 @@ class BidsController < ApplicationController
         # Running rake db:migrate always removed the attribute immutable from the schema.rb resulting in an error
         # undefined method `immutable' -> maybe a reserved word? -.-
         # Added method is_immutable to the offer model returning (dynamically) true if there are any bids placed
-        redirect_to @offer, notice: "You're bid was successfully placed"
+
+        if save_auto_bids
+          notice = "You're bid was sucessfully placed but counterbidded by another user"
+        else
+          notice = "You're bid was successfully placed"
+        end
+        redirect_to @offer, notice: notice
       else
         redirect_to @offer, alert: 'Could not create bid'
       end
@@ -81,6 +87,26 @@ class BidsController < ApplicationController
   end
 
   private
+
+    # Check for automatic biddings and execute the bid for one user
+    # Note: This is a very basic approach. This method picks the user which has defined the highest max amount, we don't go recursive
+    def save_auto_bids
+      bid_setting = BidSetting.where("offer_id = ? AND user_id != ? AND max_amount > ?", @offer.id, current_user.id, @offer.get_min_bid_amount)
+                              .order('max_amount DESC, created_at ASC')
+                              .first
+      if bid_setting.present?
+        bid = Bid.new
+        bid.user_id = bid_setting.user_id
+        bid.offer_id = @offer.id
+        bid.placed_by = Bid::PLACED_BY_SYSTEM
+        bid.timestamp = Time.now
+        bid.price = @offer.get_min_bid_amount
+        bid.save
+      else
+        false
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_bid
       @bid = Bid.find(params[:id])
