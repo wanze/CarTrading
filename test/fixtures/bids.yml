@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   user_id: 1
   offer_id: 1
   placed_by: 1
@@ -8,6 +9,7 @@ one:
   price: 1.5
 
 two:
+  id: 2
   user_id: 1
   offer_id: 1
   placed_by: 1
