@@ -51,9 +51,9 @@ class BidsController < ApplicationController
         # Added method is_immutable to the offer model returning (dynamically) true if there are any bids placed
 
         if save_auto_bids
-          notice = "You're bid was sucessfully placed but counterbidded by another user"
+          notice = 'Your bid was sucessfully placed but counterbidded by another user'
         else
-          notice = "You're bid was successfully placed"
+          notice = 'Your bid was successfully placed'
         end
         redirect_to @offer, notice: notice
       else
