@@ -18,8 +18,9 @@
         <ul class="uk-navbar-nav">
           <li<%= if params[:controller] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">Offers</a></li>
           <li<%= if params[:controller] == 'cars'; " class=uk-active" end %>><a href="<%= cars_url %>"><i class="uk-icon-car"></i> My Cars</a></li>
+          <li<%= if params[:controller] == 'users' and params[:action] == 'offers'; " class=uk-active" end %>><a href="<%= offers_url %>">My Offers</a></li>
           <li<%= if params[:controller] == 'bids'; " class=uk-active" end %>><a href="<%= bids_url %>">My Bids</a></li>
-          <li<%= if params[:controller] == 'users'; " class=uk-active" end %>><a href="<%= users_index_url %>"><i class="uk-icon-user"></i> My Account</a></li>
+          <li<%= if params[:controller] == 'users' and params[:action] != 'offers'; " class=uk-active" end %>><a href="<%= users_index_url %>"><i class="uk-icon-user"></i> My Account</a></li>
         </ul>
 
         <div class="uk-navbar-flip">

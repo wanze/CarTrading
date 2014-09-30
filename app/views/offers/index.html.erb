@@ -77,7 +77,7 @@
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.car.title %></td>
+        <td><%= offer.car.  title %></td>
         <td><%= offer.car.brand.title %></td>
         <td><%= offer.car.type.title %></td>
         <td><%= offer.car.color.title %></td>
@@ -86,10 +86,9 @@
         <td><%= offer.price %></td>
         <td><%= offer.minimum_step %></td>
         <td><%= offer.get_highest_price %></td>
-        <td><%= link_to 'View', offer, class: "uk-button uk-button-small" %></td>
-        <!--<td><%= link_to 'Show', offer %></td>-->
-        <!--<td><%= link_to 'Edit', edit_offer_path(offer) %></td>-->
-        <td><%= link_to 'Delete', offer, class: "uk-button uk-button-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <%= link_to 'View', offer, class: "uk-button uk-button-small" %>
+        </td>
       </tr>
     <% end %>
   </tbody>

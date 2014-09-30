@@ -1,12 +1,26 @@
 <h1><%= @offer.car.title %></h1>
 
-<p>
-  <%= @offer.car.description %>
-</p>
+<div class="uk-clearfix">
+    <% if not @offer.car.image.to_s.empty? %>
+        <div class="uk-thumbnail uk-align-left uk-thumbnail-medium">
+          <img src="<%= @offer.car.image %>" alt="">
+        </div>
+    <% end %>
+    <%= @offer.car.description %>
+</div>
 
-<p>
-  Available until <%= @offer.end %>
-</p>
+<% if not @offer.is_active %>
+
+    <div class="uk-panel uk-panel-box uk-margin">
+        Offer has expired
+    </div>
+
+
+<% else %>
+
+<div class="uk-panel uk-panel-box uk-margin">
+  <strong>Available until</strong> <%= @offer.end %>
+</div>
 
 <ul class="uk-tab" data-uk-tab="{connect: '#tabs-content'}">
   <li class="uk-active"><a href="#">Overview</a></li>
@@ -18,25 +32,16 @@
 
   <!-- General -->
   <li>
-    <div class="uk-grid">
-        <div class="uk-width-1-4">
-          <% if not @offer.car.image.to_s.empty? %>
-            <img class="uk-thumbnail" src="<%= @offer.car.image %>">
-          <% end %>
-        </div>
-        <div class="uk-width-2-4">
-            <dl class="uk-description-list-horizontal">
-              <dt>Type</dt>
-              <dd><%= @offer.car.type.title %></dd>
-              <dt>Color</dt>
-              <dd><%= @offer.car.color.title %></dd>
-              <dt>Age</dt>
-              <dd><%= @offer.car.age %></dd>
-              <dt>Mileage</dt>
-              <dd><%= @offer.car.mileage %></dd>
-            </dl>
-        </div>
-    </div>
+    <dl class="uk-description-list-horizontal">
+      <dt>Type</dt>
+      <dd><%= @offer.car.type.title %></dd>
+      <dt>Color</dt>
+      <dd><%= @offer.car.color.title %></dd>
+      <dt>Age</dt>
+      <dd><%= @offer.car.age %></dd>
+      <dt>Mileage</dt>
+      <dd><%= @offer.car.mileage %></dd>
+    </dl>
   </li>
 
   <!-- Bids -->
@@ -102,3 +107,5 @@
 
   </li>
 </ul>
+
+<% end %>
