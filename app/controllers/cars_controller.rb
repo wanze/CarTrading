@@ -58,14 +58,13 @@ class CarsController < ApplicationController
   # DELETE /cars/1
   # DELETE /cars/1.json
   def destroy
-    if @car.offers.any?
-      redirect_to cars_url, alert: 'An offered car cannot be removed.'
-    else
-      @car.destroy
+    if @car.destroy
       respond_to do |format|
         format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
         format.json { head :no_content }
       end
+    else
+      redirect_to cars_url, alert: 'An offered car cannot be removed.'
     end
   end
 
