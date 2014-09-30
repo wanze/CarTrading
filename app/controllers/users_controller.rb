@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     # dirty hack, don't know if this is valid sql: select field as f1, * from bla
     @offers = Offer.select("offers.id as oid, *")
     .joins(:car)
-    .where('"end"" < ? AND car_id IN (?) ',DateTime.now,@cars)
+    .where('"end" < ? AND car_id IN (?) ',DateTime.now,@cars)
 
     # correct wrong id number (because of the previous join....)
     @offers.each { |o| o.id = o.oid }
