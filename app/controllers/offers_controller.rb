@@ -11,7 +11,7 @@ class OffersController < ApplicationController
       @offers = Offer.filter(params)
     else
       # No filter active, but display only active offers!
-      @offers = Offer.where(:end <= Time.now)
+      @offers = Offer.where('"end >=?"',Time.now)
     end
     @brands = Brand.all
     @colors = Color.all
