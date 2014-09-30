@@ -10,5 +10,19 @@ class Car < ActiveRecord::Base
   belongs_to :brand
   belongs_to :type
   belongs_to :color #could also be many to many...
+  has_many :offers
+
   mount_uploader :image, ImageUploader
+
+  before_destroy :check_for_offers
+
+  def check_for_offers
+    if offers.any?
+      errors.add(:id,'Cannot removed a offered car.')
+      return false
+    else
+      return true
+    end
+  end
+
 end
