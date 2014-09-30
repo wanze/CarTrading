@@ -8,6 +8,7 @@ class BidsController < ApplicationController
   # GET /bids.json
   def index
     # hack alert
+    @hash = Hash.new
     Bid.where(:user_id => current_user.id).each do |b|
       @hash[b.offer_id] = b if @hash[b.offer_id].nil? or b.price > @hash[b.offer_id].price
     end
