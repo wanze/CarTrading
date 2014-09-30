@@ -40,7 +40,7 @@ class BidsController < ApplicationController
       redirect_to 'offers/index', alert: 'Offer no longer available' and return
     end
     amount = params[:amount].to_f # Cast to float
-    if amount < @offer.get_min_bid_amount
+    if amount < @offer.get_min_bid_amount + @offer.price
       redirect_to @offer, notice: 'The entered amount is too small' and return
     else
       @bid = Bid.new
