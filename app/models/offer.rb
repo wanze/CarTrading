@@ -25,7 +25,7 @@ class Offer < ActiveRecord::Base
       wheres.merge!('cars.brand_id' => params[:brand])
     end
 
-    self.where('end >= :now', :now => Time.now).joins(:car).where(wheres)
+    self.where('"end" >= :now', :now => Time.now).joins(:car).where(wheres)
   end
 
   # Return the current highest bid by price of this offer
