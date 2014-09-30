@@ -42,7 +42,7 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     @offer = Offer.new(offer_params)
-
+    @cars = Car.where(:user_id => current_user.id)
     respond_to do |format|
       if @offer.save
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
