@@ -1,6 +1,6 @@
 ActiveAdmin.register Bid do
 
-
+  permit_params :id, :user_id, :offer_id, :placed_by, :timestamp, :price
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
