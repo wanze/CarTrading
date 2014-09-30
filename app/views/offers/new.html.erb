@@ -1,5 +1,6 @@
-<h1>New offer</h1>
+<% if @cars.count > 0 %>
+    <h1>New offer</h1>
+    <%= render 'form' %>
+    <%= link_to 'Back', users_index_path %>
+<% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', users_index_path %>

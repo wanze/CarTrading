@@ -31,6 +31,9 @@ class OffersController < ApplicationController
   def new
     @offer = Offer.new
     @cars = Car.where(:user_id => current_user.id)
+    if @cars.count == 0
+      flash.now[:notice] = "Please register a car before creating an offer"
+    end
   end
 
   # GET /offers/1/edit
