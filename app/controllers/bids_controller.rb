@@ -7,7 +7,11 @@ class BidsController < ApplicationController
   # GET /bids
   # GET /bids.json
   def index
-    @bids = Bid.where(:user_id => current_user.id).group("offer_id")
+    # hack alert
+    Bid.where(:user_id => current_user.id).each do |b|
+      @hash[b.offer_id] = b if @hash[b.offer_id].nil? or b.price > @hash[b.offer_id].price
+    end
+    @bids = @hash.values
   end
 
   # GET /bids/1
